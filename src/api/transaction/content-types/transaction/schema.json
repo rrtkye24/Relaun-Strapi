@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transactions",
+  "info": {
+    "singularName": "transaction",
+    "pluralName": "transactions",
+    "displayName": "transaction",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "date_transaction": {
+      "type": "date"
+    },
+    "customer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::customer.customer",
+      "inversedBy": "transactions"
+    },
+    "outlet": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::outlet.outlet",
+      "inversedBy": "transactions"
+    },
+    "deadline": {
+      "type": "datetime"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "new",
+        "process",
+        "done ",
+        "take-out"
+      ]
+    },
+    "dibayar": {
+      "type": "enumeration",
+      "enum": [
+        "complete",
+        "un-complete"
+      ]
+    },
+    "invoice": {
+      "type": "string"
+    }
+  }
+}
