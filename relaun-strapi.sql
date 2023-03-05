@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Feb 08, 2023 at 12:32 AM
+-- Generation Time: Mar 05, 2023 at 07:44 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -333,7 +333,7 @@ CREATE TABLE `admin_users` (
 --
 
 INSERT INTO `admin_users` (`id`, `firstname`, `lastname`, `username`, `email`, `password`, `reset_password_token`, `registration_token`, `is_active`, `blocked`, `prefered_language`, `created_at`, `updated_at`, `created_by_id`, `updated_by_id`) VALUES
-(1, 'admin', 'relaun', 'admin', 'retha.teja2403@gmail.com', '$2a$10$Ad8eos3dIe.9EVMHIRotOueKXUQmud/n9a3AcqMLmEu2jDH7JfMGu', NULL, NULL, 1, 0, 'en', '2023-01-25 14:10:18.097000', '2023-02-03 10:39:41.320000', NULL, NULL),
+(1, 'Admin', 'Relaun', 'Administrator', 'retha.teja2403@gmail.com', '$2a$10$Ad8eos3dIe.9EVMHIRotOueKXUQmud/n9a3AcqMLmEu2jDH7JfMGu', NULL, NULL, 1, 0, 'en', '2023-01-25 14:10:18.097000', '2023-02-27 21:18:03.282000', NULL, NULL),
 (2, 'cashier', '', NULL, 'cashier@relaun.com', '$2a$10$khkK54OLIxb9kZB3LAqLauP5pJL1ygkVp.PpOfj9oxUpO9KxuJlHS', NULL, NULL, 1, 0, NULL, '2023-01-31 08:28:04.218000', '2023-01-31 08:29:24.146000', NULL, NULL),
 (3, 'owner', '', NULL, 'owner@relaun.com', '$2a$10$TEA0U7QMHqrKvAyjg5oyc.2Vw.7qKrjMsIuXU3.OQfqGTc3TIYEnq', NULL, NULL, 1, 0, NULL, '2023-02-03 08:21:53.557000', '2023-02-03 08:28:44.647000', NULL, NULL);
 
@@ -491,7 +491,8 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`id`, `created_at`, `updated_at`, `published_at`, `created_by_id`, `updated_by_id`, `name_costumer`, `address`, `number_phone`, `sex`) VALUES
-(1, '2023-01-30 20:32:43.030000', '2023-01-30 20:41:52.696000', '2023-01-30 20:32:57.719000', 1, 1, 'retha', 'JL. Palir Raya 66-68 Podorejo\nJL', '085618642831', 'woman');
+(1, '2023-01-30 20:32:43.030000', '2023-01-30 20:41:52.696000', '2023-01-30 20:32:57.719000', 1, 1, 'retha', 'JL. Palir Raya 66-68 Podorejo\nJL', '085618642831', 'woman'),
+(2, '2023-02-08 14:43:22.449000', '2023-02-08 14:43:27.117000', '2023-02-08 14:43:27.110000', 1, 1, 'etha', 'asdasd', '1234', 'woman');
 
 -- --------------------------------------------------------
 
@@ -504,6 +505,13 @@ CREATE TABLE `customers_admin_user_links` (
   `customer_id` int UNSIGNED DEFAULT NULL,
   `user_id` int UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `customers_admin_user_links`
+--
+
+INSERT INTO `customers_admin_user_links` (`id`, `customer_id`, `user_id`) VALUES
+(1, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -539,7 +547,7 @@ CREATE TABLE `files` (
 --
 
 INSERT INTO `files` (`id`, `name`, `alternative_text`, `caption`, `width`, `height`, `formats`, `hash`, `ext`, `mime`, `size`, `url`, `preview_url`, `provider`, `provider_metadata`, `folder_path`, `created_at`, `updated_at`, `created_by_id`, `updated_by_id`) VALUES
-(2, 'Group 3.png', NULL, NULL, 1495, 1535, '{\"large\": {\"ext\": \".png\", \"url\": \"/uploads/large_Group_3_aa796ac425.png\", \"hash\": \"large_Group_3_aa796ac425\", \"mime\": \"image/png\", \"name\": \"large_Group 3.png\", \"path\": null, \"size\": 180.45, \"width\": 974, \"height\": 1000}, \"small\": {\"ext\": \".png\", \"url\": \"/uploads/small_Group_3_aa796ac425.png\", \"hash\": \"small_Group_3_aa796ac425\", \"mime\": \"image/png\", \"name\": \"small_Group 3.png\", \"path\": null, \"size\": 71.91, \"width\": 487, \"height\": 500}, \"medium\": {\"ext\": \".png\", \"url\": \"/uploads/medium_Group_3_aa796ac425.png\", \"hash\": \"medium_Group_3_aa796ac425\", \"mime\": \"image/png\", \"name\": \"medium_Group 3.png\", \"path\": null, \"size\": 121.37, \"width\": 730, \"height\": 750}, \"thumbnail\": {\"ext\": \".png\", \"url\": \"/uploads/thumbnail_Group_3_aa796ac425.png\", \"hash\": \"thumbnail_Group_3_aa796ac425\", \"mime\": \"image/png\", \"name\": \"thumbnail_Group 3.png\", \"path\": null, \"size\": 18.03, \"width\": 152, \"height\": 156}}', 'Group_3_aa796ac425', '.png', 'image/png', '29.06', '/uploads/Group_3_aa796ac425.png', NULL, 'local', NULL, '/', '2023-02-03 09:43:51.965000', '2023-02-03 10:33:33.602000', 1, 1);
+(2, 'Group 3.png', NULL, NULL, 1495, 1535, '{\"large\": {\"ext\": \".png\", \"url\": \"/uploads/large_Group_3_aa796ac425.png\", \"hash\": \"large_Group_3_aa796ac425\", \"mime\": \"image/png\", \"name\": \"large_Group 3.png\", \"path\": null, \"size\": 180.45, \"width\": 974, \"height\": 1000}, \"small\": {\"ext\": \".png\", \"url\": \"/uploads/small_Group_3_aa796ac425.png\", \"hash\": \"small_Group_3_aa796ac425\", \"mime\": \"image/png\", \"name\": \"small_Group 3.png\", \"path\": null, \"size\": 71.91, \"width\": 487, \"height\": 500}, \"medium\": {\"ext\": \".png\", \"url\": \"/uploads/medium_Group_3_aa796ac425.png\", \"hash\": \"medium_Group_3_aa796ac425\", \"mime\": \"image/png\", \"name\": \"medium_Group 3.png\", \"path\": null, \"size\": 121.37, \"width\": 730, \"height\": 750}, \"thumbnail\": {\"ext\": \".png\", \"url\": \"/uploads/thumbnail_Group_3_aa796ac425.png\", \"hash\": \"thumbnail_Group_3_aa796ac425\", \"mime\": \"image/png\", \"name\": \"thumbnail_Group 3.png\", \"path\": null, \"size\": 18.03, \"width\": 152, \"height\": 156}}', 'Group_3_aa796ac425', '.png', 'image/png', '29.06', '/uploads/Group_3_aa796ac425.png', NULL, 'local', NULL, '/', '2023-02-03 09:43:51.965000', '2023-02-08 14:43:17.459000', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -603,7 +611,8 @@ CREATE TABLE `graphs_builder_graph` (
 
 INSERT INTO `graphs_builder_graph` (`id`, `title`, `type`, `collection_x`, `collection_x_attribute`, `created_at`, `updated_at`, `created_by_id`, `updated_by_id`) VALUES
 (1, 'Transaction', 'bar', 'api::transaction.transaction', 'dibayar', '2023-02-03 09:41:57.887000', '2023-02-03 09:41:57.887000', 1, 1),
-(2, 'Transaction', 'bar', 'api::transaction.transaction', 'dibayar', '2023-02-03 10:38:43.983000', '2023-02-03 10:38:43.983000', 1, 1);
+(2, 'Transaction', 'bar', 'api::transaction.transaction', 'dibayar', '2023-02-03 10:38:43.983000', '2023-02-03 10:38:43.983000', 1, 1),
+(3, 'User', 'pie', 'plugin::users-permissions.user', 'confirmed', '2023-02-08 14:44:38.592000', '2023-02-08 14:44:38.592000', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -790,7 +799,7 @@ INSERT INTO `strapi_core_store_settings` (`id`, `key`, `value`, `type`, `environ
 (12, 'plugin_content_manager_configuration_content_types::plugin::i18n.locale', '{\"uid\":\"plugin::i18n.locale\",\"settings\":{\"bulkable\":true,\"filterable\":true,\"searchable\":true,\"pageSize\":10,\"mainField\":\"name\",\"defaultSortBy\":\"name\",\"defaultSortOrder\":\"ASC\"},\"metadatas\":{\"id\":{\"edit\":{},\"list\":{\"label\":\"id\",\"searchable\":true,\"sortable\":true}},\"name\":{\"edit\":{\"label\":\"name\",\"description\":\"\",\"placeholder\":\"\",\"visible\":true,\"editable\":true},\"list\":{\"label\":\"name\",\"searchable\":true,\"sortable\":true}},\"code\":{\"edit\":{\"label\":\"code\",\"description\":\"\",\"placeholder\":\"\",\"visible\":true,\"editable\":true},\"list\":{\"label\":\"code\",\"searchable\":true,\"sortable\":true}},\"createdAt\":{\"edit\":{\"label\":\"createdAt\",\"description\":\"\",\"placeholder\":\"\",\"visible\":false,\"editable\":true},\"list\":{\"label\":\"createdAt\",\"searchable\":true,\"sortable\":true}},\"updatedAt\":{\"edit\":{\"label\":\"updatedAt\",\"description\":\"\",\"placeholder\":\"\",\"visible\":false,\"editable\":true},\"list\":{\"label\":\"updatedAt\",\"searchable\":true,\"sortable\":true}}},\"layouts\":{\"list\":[\"id\",\"name\",\"code\",\"createdAt\"],\"edit\":[[{\"name\":\"name\",\"size\":6},{\"name\":\"code\",\"size\":6}]]}}', 'object', NULL, NULL),
 (13, 'plugin_upload_settings', '{\"sizeOptimization\":true,\"responsiveDimensions\":true,\"autoOrientation\":false}', 'object', NULL, NULL),
 (14, 'plugin_upload_view_configuration', '{\"pageSize\":10,\"sort\":\"createdAt:DESC\"}', 'object', NULL, NULL),
-(15, 'plugin_upload_metrics', '{\"weeklySchedule\":\"30 14 14 * * 3\",\"lastWeeklyUpdate\":1675235670080}', 'object', NULL, NULL),
+(15, 'plugin_upload_metrics', '{\"weeklySchedule\":\"12 22 21 * * 1\",\"lastWeeklyUpdate\":1677507732025}', 'object', NULL, NULL),
 (16, 'plugin_users-permissions_grant', '{\"email\":{\"enabled\":true,\"icon\":\"envelope\"},\"discord\":{\"enabled\":false,\"icon\":\"discord\",\"key\":\"\",\"secret\":\"\",\"callback\":\"api/auth/discord/callback\",\"scope\":[\"identify\",\"email\"]},\"facebook\":{\"enabled\":false,\"icon\":\"facebook-square\",\"key\":\"\",\"secret\":\"\",\"callback\":\"api/auth/facebook/callback\",\"scope\":[\"email\"]},\"google\":{\"enabled\":false,\"icon\":\"google\",\"key\":\"\",\"secret\":\"\",\"callback\":\"api/auth/google/callback\",\"scope\":[\"email\"]},\"github\":{\"enabled\":false,\"icon\":\"github\",\"key\":\"\",\"secret\":\"\",\"callback\":\"api/auth/github/callback\",\"scope\":[\"user\",\"user:email\"]},\"microsoft\":{\"enabled\":false,\"icon\":\"windows\",\"key\":\"\",\"secret\":\"\",\"callback\":\"api/auth/microsoft/callback\",\"scope\":[\"user.read\"]},\"twitter\":{\"enabled\":false,\"icon\":\"twitter\",\"key\":\"\",\"secret\":\"\",\"callback\":\"api/auth/twitter/callback\"},\"instagram\":{\"enabled\":false,\"icon\":\"instagram\",\"key\":\"\",\"secret\":\"\",\"callback\":\"api/auth/instagram/callback\",\"scope\":[\"user_profile\"]},\"vk\":{\"enabled\":false,\"icon\":\"vk\",\"key\":\"\",\"secret\":\"\",\"callback\":\"api/auth/vk/callback\",\"scope\":[\"email\"]},\"twitch\":{\"enabled\":false,\"icon\":\"twitch\",\"key\":\"\",\"secret\":\"\",\"callback\":\"api/auth/twitch/callback\",\"scope\":[\"user:read:email\"]},\"linkedin\":{\"enabled\":false,\"icon\":\"linkedin\",\"key\":\"\",\"secret\":\"\",\"callback\":\"api/auth/linkedin/callback\",\"scope\":[\"r_liteprofile\",\"r_emailaddress\"]},\"cognito\":{\"enabled\":false,\"icon\":\"aws\",\"key\":\"\",\"secret\":\"\",\"subdomain\":\"my.subdomain.com\",\"callback\":\"api/auth/cognito/callback\",\"scope\":[\"email\",\"openid\",\"profile\"]},\"reddit\":{\"enabled\":false,\"icon\":\"reddit\",\"key\":\"\",\"secret\":\"\",\"state\":true,\"callback\":\"api/auth/reddit/callback\",\"scope\":[\"identity\"]},\"auth0\":{\"enabled\":false,\"icon\":\"\",\"key\":\"\",\"secret\":\"\",\"subdomain\":\"my-tenant.eu\",\"callback\":\"api/auth/auth0/callback\",\"scope\":[\"openid\",\"email\",\"profile\"]},\"cas\":{\"enabled\":false,\"icon\":\"book\",\"key\":\"\",\"secret\":\"\",\"callback\":\"api/auth/cas/callback\",\"scope\":[\"openid email\"],\"subdomain\":\"my.subdomain.com/cas\"}}', 'object', NULL, NULL),
 (17, 'plugin_users-permissions_email', '{\"reset_password\":{\"display\":\"Email.template.reset_password\",\"icon\":\"sync\",\"options\":{\"from\":{\"name\":\"Administration Panel\",\"email\":\"no-reply@strapi.io\"},\"response_email\":\"\",\"object\":\"Reset password\",\"message\":\"<p>We heard that you lost your password. Sorry about that!</p>\\n\\n<p>But don’t worry! You can use the following link to reset your password:</p>\\n<p><%= URL %>?code=<%= TOKEN %></p>\\n\\n<p>Thanks.</p>\"}},\"email_confirmation\":{\"display\":\"Email.template.email_confirmation\",\"icon\":\"check-square\",\"options\":{\"from\":{\"name\":\"Administration Panel\",\"email\":\"no-reply@strapi.io\"},\"response_email\":\"\",\"object\":\"Account confirmation\",\"message\":\"<p>Thank you for registering!</p>\\n\\n<p>You have to confirm your email address. Please click on the link below.</p>\\n\\n<p><%= URL %>?confirmation=<%= CODE %></p>\\n\\n<p>Thanks.</p>\"}}}', 'object', NULL, NULL),
 (18, 'plugin_users-permissions_advanced', '{\"unique_email\":true,\"allow_register\":true,\"email_confirmation\":false,\"email_reset_password\":null,\"email_confirmation_redirection\":null,\"default_role\":\"authenticated\"}', 'object', NULL, NULL),
@@ -890,7 +899,7 @@ CREATE TABLE `transactions` (
 
 INSERT INTO `transactions` (`id`, `date_transaction`, `created_at`, `updated_at`, `published_at`, `created_by_id`, `updated_by_id`, `deadline`, `status`, `dibayar`, `invoice`) VALUES
 (1, '2023-02-01', '2023-02-01 10:51:30.440000', '2023-02-01 10:51:50.972000', '2023-02-01 10:51:50.968000', 1, 1, '2023-02-01 00:00:00.000000', 'new', 'complete', NULL),
-(2, '2023-02-28', '2023-02-03 09:17:03.531000', '2023-02-03 09:17:58.394000', NULL, 3, 1, '2023-01-31 00:00:00.000000', 'new', 'complete', 'S-relaun1');
+(2, '2023-02-28', '2023-02-03 09:17:03.531000', '2023-02-08 14:44:01.371000', '2023-02-08 14:44:01.364000', 3, 1, '2023-01-31 00:00:00.000000', 'new', 'complete', 'S-relaun1');
 
 -- --------------------------------------------------------
 
@@ -910,8 +919,8 @@ CREATE TABLE `transactions_customer_links` (
 --
 
 INSERT INTO `transactions_customer_links` (`id`, `transaction_id`, `customer_id`, `transaction_order`) VALUES
-(1, 1, 1, 1),
-(2, 2, 1, 2);
+(2, 2, 1, 2),
+(3, 1, 2, 0);
 
 -- --------------------------------------------------------
 
@@ -1035,7 +1044,12 @@ INSERT INTO `up_permissions` (`id`, `action`, `created_at`, `updated_at`, `creat
 (82, 'plugin::users-permissions.role.find', '2023-02-03 09:30:50.084000', '2023-02-03 09:30:50.084000', NULL, NULL),
 (83, 'plugin::users-permissions.role.updateRole', '2023-02-03 09:30:50.084000', '2023-02-03 09:30:50.084000', NULL, NULL),
 (84, 'plugin::users-permissions.role.deleteRole', '2023-02-03 09:30:50.084000', '2023-02-03 09:30:50.084000', NULL, NULL),
-(85, 'plugin::users-permissions.permissions.getPermissions', '2023-02-03 09:30:50.084000', '2023-02-03 09:30:50.084000', NULL, NULL);
+(85, 'plugin::users-permissions.permissions.getPermissions', '2023-02-03 09:30:50.084000', '2023-02-03 09:30:50.084000', NULL, NULL),
+(91, 'api::outlet.outlet.find', '2023-02-08 10:35:55.605000', '2023-02-08 10:35:55.605000', NULL, NULL),
+(92, 'api::outlet.outlet.findOne', '2023-02-08 10:35:55.605000', '2023-02-08 10:35:55.605000', NULL, NULL),
+(93, 'api::outlet.outlet.create', '2023-02-08 10:35:55.605000', '2023-02-08 10:35:55.605000', NULL, NULL),
+(94, 'api::outlet.outlet.update', '2023-02-08 10:35:55.605000', '2023-02-08 10:35:55.605000', NULL, NULL),
+(95, 'api::outlet.outlet.delete', '2023-02-08 10:35:55.605000', '2023-02-08 10:35:55.605000', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1106,7 +1120,12 @@ INSERT INTO `up_permissions_role_links` (`id`, `permission_id`, `role_id`, `perm
 (82, 82, 2, 2),
 (83, 83, 2, 2),
 (84, 84, 2, 2),
-(85, 85, 2, 3);
+(85, 85, 2, 3),
+(91, 91, 1, 6),
+(92, 92, 1, 6),
+(93, 93, 1, 6),
+(94, 94, 1, 6),
+(95, 95, 1, 6);
 
 -- --------------------------------------------------------
 
@@ -1130,8 +1149,8 @@ CREATE TABLE `up_roles` (
 --
 
 INSERT INTO `up_roles` (`id`, `name`, `description`, `type`, `created_at`, `updated_at`, `created_by_id`, `updated_by_id`) VALUES
-(1, 'Authenticated', 'Default role given to authenticated user.', 'authenticated', '2023-01-25 14:09:30.747000', '2023-02-03 09:29:05.511000', NULL, NULL),
-(2, 'Public', 'Default role given to unauthenticated user.', 'public', '2023-01-25 14:09:30.751000', '2023-02-03 09:30:50.072000', NULL, NULL);
+(1, 'Authenticated', 'Default role given to authenticated user.', 'authenticated', '2023-01-25 14:09:30.747000', '2023-02-27 21:19:52.565000', NULL, NULL),
+(2, 'Public', 'Default role given to unauthenticated user.', 'public', '2023-01-25 14:09:30.751000', '2023-02-08 10:33:45.725000', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1162,9 +1181,7 @@ CREATE TABLE `up_users` (
 INSERT INTO `up_users` (`id`, `username`, `email`, `provider`, `password`, `reset_password_token`, `confirmation_token`, `confirmed`, `blocked`, `created_at`, `updated_at`, `created_by_id`, `updated_by_id`) VALUES
 (1, 'cashier', 'cashier@relaun.com', 'local', '$2a$10$BPzzj5.Eohd3mTROTVk7/eiRMpTbj/kviDHsSxm0hO29PlPEHXN26', NULL, NULL, 1, 0, '2023-01-26 19:54:45.688000', '2023-01-26 19:54:45.688000', 1, 1),
 (2, 'admin', 'admin@relaun.com', 'local', '$2a$10$/FOcbYr0vm3xX722XL9lCuMfEx5rFJ6/7/0LoYn/eLhTT24L2F5hi', NULL, NULL, 1, 0, '2023-01-26 19:55:29.065000', '2023-02-03 09:44:00.271000', 1, 1),
-(3, 'owner', 'owner@relaun.com', 'local', '$2a$10$gCd2nihGjD95308JYAeaYenbzxv1qfVdQwpwhZ.Q20XJAcILOvrqa', NULL, NULL, 1, 0, '2023-01-26 19:56:20.622000', '2023-02-03 08:20:36.092000', 1, 1),
-(4, 'eta22222', 'eta@gmail.com', 'local', '$2a$10$TAbIpAp9YeURvDqr1aXiWeGSz69eQy8VKT6OUj4C6IyeKqiG21tJm', NULL, NULL, 1, 0, '2023-02-02 13:24:46.157000', '2023-02-03 10:37:53.735000', NULL, 1),
-(5, 'eta2', 'eta2@gmail.com', 'local', '$2a$10$UFT/RWNQHmrs1eCqVVtba.UE58NqWp5EweaRg6dSaM2tZTqkpM8pe', NULL, NULL, 0, 0, '2023-02-03 10:37:07.906000', '2023-02-03 10:37:07.906000', 1, 1);
+(3, 'owner', 'owner@relaun.com', 'local', '$2a$10$gCd2nihGjD95308JYAeaYenbzxv1qfVdQwpwhZ.Q20XJAcILOvrqa', NULL, NULL, 1, 0, '2023-01-26 19:56:20.622000', '2023-02-03 08:20:36.092000', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -1186,9 +1203,7 @@ CREATE TABLE `up_users_role_links` (
 INSERT INTO `up_users_role_links` (`id`, `user_id`, `role_id`, `user_order`) VALUES
 (1, 1, 1, 1),
 (2, 2, 1, 2),
-(5, 4, 2, 1),
-(6, 3, 1, 3),
-(7, 5, 2, 2);
+(6, 3, 1, 3);
 
 --
 -- Indexes for dumped tables
@@ -1621,13 +1636,13 @@ ALTER TABLE `cookie_popups_localizations_links`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `customers_admin_user_links`
 --
 ALTER TABLE `customers_admin_user_links`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `files`
@@ -1651,7 +1666,7 @@ ALTER TABLE `files_related_morphs`
 -- AUTO_INCREMENT for table `graphs_builder_graph`
 --
 ALTER TABLE `graphs_builder_graph`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `i18n_locale`
@@ -1735,7 +1750,7 @@ ALTER TABLE `transactions`
 -- AUTO_INCREMENT for table `transactions_customer_links`
 --
 ALTER TABLE `transactions_customer_links`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `transactions_outlet_links`
@@ -1759,13 +1774,13 @@ ALTER TABLE `upload_folders_parent_links`
 -- AUTO_INCREMENT for table `up_permissions`
 --
 ALTER TABLE `up_permissions`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
 
 --
 -- AUTO_INCREMENT for table `up_permissions_role_links`
 --
 ALTER TABLE `up_permissions_role_links`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
 
 --
 -- AUTO_INCREMENT for table `up_roles`
@@ -1777,13 +1792,13 @@ ALTER TABLE `up_roles`
 -- AUTO_INCREMENT for table `up_users`
 --
 ALTER TABLE `up_users`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `up_users_role_links`
 --
 ALTER TABLE `up_users_role_links`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
